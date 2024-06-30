@@ -1,15 +1,11 @@
-include stdlib
+# using puppet to make changes to our configuration file.
 
-file_line { 'Turn off passwd auth':
+file { '/etc/ssh/ssh_cofig':
   ensure  => present,
-  path    => '/etc/ssh/ssh_config',
-  line    => '    PasswordAuthentication no',
-  replace => true,
-}
-
-file_line { 'Delare identity file':
-  ensure  => present,
-  path    => '/etc/ssh/ssh_config',
-  line    => '     IdentityFile ~/.ssh/school',
-  replace => true,
+  content => "
+    # SSH client configuration
+    Host *
+      IdentityFile ~/.ssh/school
+      PasswordAuthentication no
+  ",
 }
