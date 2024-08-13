@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
     lines = []
     for todo in todos:
-        lines.append([user['id'], user['username'],
-                     todo['completed'], todo['title']])
+        lines.append([user.get('id'), user.get('username'),
+                     todo.get('completed'), todo.get('title')])
 
     with open('{}.csv'.format(user['id']), 'w') as f:
         csv_writer = csv.writer(f, delimiter=',')
