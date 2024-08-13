@@ -4,9 +4,9 @@ A sript that, uses a REST API, for a given employee ID, returns
 information about his/her TODO list progress
 and exports data in the JSON format.
 """
+import json
 import requests
 from sys import argv
-import json
 
 
 if __name__ == '__main__':
