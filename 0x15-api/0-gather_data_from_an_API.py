@@ -18,9 +18,9 @@ if __name__ == '__main__':
 
     dones = []
     for todo in todos:
-        if todo['completed'] is True:
-            dones.append(todo['title'])
+        if todo.get('completed') is True:
+            dones.append(todo.get('title'))
     print('Employee {} is done with tasks({}/{}):'.format(
-        user['name'], len(dones), len(todos)))
+        user.get('name'), len(dones), len(todos)))
     for done in dones:
         print('\t {}'.format(done))
