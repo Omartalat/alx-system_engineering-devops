@@ -26,7 +26,7 @@ if __name__ == '__main__':
                      todo.get('completed'), todo.get('title')])
 
     with open('{}.csv'.format(user['id']), 'w') as f:
-        csv_writer = csv.writer(f, delimiter=',')
+        csv_writer = csv.writer(f, delimiter=',', quoting=csv.QUOTE_ALL)
 
         for line in lines:
             csv_writer.writerow(line)
