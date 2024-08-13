@@ -4,10 +4,11 @@ A Script that, uses a REST API, for a given employee ID, returns
 information about his/her TODO list progress
 exporting data in the CSV format.
 """
-from sys import argv
-import requests
 import csv
 import json
+import requests
+from sys import argv
+
 
 if __name__ == '__main__':
     user = requests.get(
