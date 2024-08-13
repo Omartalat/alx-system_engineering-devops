@@ -23,13 +23,13 @@ if __name__ == '__main__':
 
     for todo in todos:
         val.append({
-            "task": todo['title'],
-            "completed": todo['completed'],
-            "username": user['username']
+            "task": todo.get('title'),
+            "completed": todo.get('completed'),
+            "username": user.get('username')
         })
 
     dict_ = {
-        user['id']: val
+        user.get('id'): val
     }
 
     with open('{}.json'.format(argv[1]), 'w') as f:
